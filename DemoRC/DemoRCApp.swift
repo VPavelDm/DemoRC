@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 @main
 struct DemoRCApp: App {
+    
+    init() {
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "{{TOKEN}}")
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DemoLearnView()
         }
     }
 }

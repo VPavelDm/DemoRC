@@ -11,6 +11,8 @@
 		E93667AA2BAF014400EDBA54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93667A92BAF014400EDBA54 /* ContentView.swift */; };
 		E93667AC2BAF014600EDBA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93667AB2BAF014600EDBA54 /* Assets.xcassets */; };
 		E93667AF2BAF014600EDBA54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93667AE2BAF014600EDBA54 /* Preview Assets.xcassets */; };
+		E93667BA2BAF027500EDBA54 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93667B92BAF027500EDBA54 /* StoreKit.framework */; };
+		E93667BD2BAF05BF00EDBA54 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = E93667BC2BAF05BF00EDBA54 /* RevenueCat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		E93667A92BAF014400EDBA54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E93667AB2BAF014600EDBA54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E93667AE2BAF014600EDBA54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E93667B92BAF027500EDBA54 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E93667BD2BAF05BF00EDBA54 /* RevenueCat in Frameworks */,
+				E93667BA2BAF027500EDBA54 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +42,7 @@
 			children = (
 				E93667A62BAF014400EDBA54 /* DemoRC */,
 				E93667A52BAF014400EDBA54 /* Products */,
+				E93667B82BAF027500EDBA54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +73,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E93667B82BAF027500EDBA54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E93667B92BAF027500EDBA54 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +97,9 @@
 			dependencies = (
 			);
 			name = DemoRC;
+			packageProductDependencies = (
+				E93667BC2BAF05BF00EDBA54 /* RevenueCat */,
+			);
 			productName = DemoRC;
 			productReference = E93667A42BAF014400EDBA54 /* DemoRC.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,9 @@
 				Base,
 			);
 			mainGroup = E936679B2BAF014400EDBA54;
+			packageReferences = (
+				E93667BB2BAF05BF00EDBA54 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			productRefGroup = E93667A52BAF014400EDBA54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,7 +305,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.DemoRC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Faultier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -314,7 +334,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.DemoRC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Faultier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -344,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E93667BB2BAF05BF00EDBA54 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.39.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E93667BC2BAF05BF00EDBA54 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E93667BB2BAF05BF00EDBA54 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E936679C2BAF014400EDBA54 /* Project object */;
 }
